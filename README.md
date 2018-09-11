@@ -79,9 +79,10 @@ GPIO 0 TRIS:  1ffffff
 GPIO 1 DATA:        0
 GPIO 1 TRIS:  1ffffff
 GPIO 2 DATA:  13fff03
-GPIO 2 TRIS:   ffffff
+GPIO 2 TRIS:  1ffffff
 GPIO 3 DATA:  1cc0fff
 GPIO 3 TRIS:  1ffffff
+Setting LED TRIS to OUT
 LED state flipped!
 ```
 (You will probably read different data since I have a custom board plugged into JB1/JB2.) The program operates as follows. The section of memory containing the GPIO registers is mapped via `mmap`. The value of each of the registers is read out. If the output direction (TRIS bit) of the LED pin is not set, it is set to output. Finally, the value of the LED output is inverted. 
